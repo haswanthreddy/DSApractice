@@ -1,6 +1,8 @@
 # reverse an array
+# https://www.geeksforgeeks.org/write-a-program-to-reverse-an-array-or-string/
 # input: arr [] = {1,2,3}
 # output: arr [] = {3,2,1}
+
 
 
 inputArr = [10,21,32,43,55,68,79]
