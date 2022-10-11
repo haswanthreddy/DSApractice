@@ -2,11 +2,11 @@
 # check other methods
 
 '''
-Input: arr[] = {7, 10, 4, 3, 20, 15}, K = 3 
+Input: arr[] = {7, 10, 4, 3, 20, 15}, K = 3
 Output: 7
 
-Input: arr[] = {7, 10, 4, 3, 20, 15}, K = 4 
-Output: 10 
+Input: arr[] = {7, 10, 4, 3, 20, 15}, K = 4
+Output: 10
 
 '''
 
@@ -19,4 +19,3 @@ inputArr = sorted(inputArr)
 print(inputArr)
 print('smallest:', inputArr[k-1])
 print('largest:', inputArr[len(inputArr)-k])
-
