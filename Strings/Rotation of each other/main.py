@@ -34,4 +34,26 @@ testCases
 
 '''
 
-    
+
+# simple solution o(n^2)
+
+def rotateString2(s1,s2) -> bool:
+    return len(s1) == len(s2) and s2 in (s1+s1)
+
+print(rotateString2(string1, string2))
+
+# alternate solution 2
+
+def rotateString3(s1:str, s2:str) -> bool:
+    n = len(s1)
+    times = n
+    while (times > 0):
+        s1 = s1[n-1] + s1[:n-1] # s1 = s1[-1:] + s1[:-1]
+        if s1 == s2:
+            return True
+        times -= 1
+    return False
+
+
+
+
