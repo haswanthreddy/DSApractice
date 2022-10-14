@@ -3,39 +3,35 @@
 # https://www.geeksforgeeks.org/a-program-to-check-if-strings-are-rotations-of-each-other/
 
 
-'''
-string1 = "ACBDCABC"
-string2 = "CDABBCCA"
+string1 = "ABACD"
+string2 = "CDABA"
 
-def checkIfRotated(string1,string2) -> bool:
-    if len(string1) != len(string2):
-        return 'strings are not rotation of each other'
-
-    # string 
-    i = 0
-    while (i < len(string1)):
-        s1 = ''
-        s2 = ''
-        if i == 0:
-            s1 = string1[i:i+2]
-            s2= string2[2-len(string1)-i:]
+def rotateString(s: str, goal: str) -> bool:
+    if len(s) != len(goal):
+        return False
+    temp_string = s*2
+    count = 0
+    for i in range(len(temp_string)):
+        next_temp_string = temp_string[i+1] if i+1 <= (len(temp_string)-1) else ""
+        next_goal = goal[count+1] if count+1 <= (len(goal)-1) else ""
+        if count == (len(goal) -1):
+            return True
+        if temp_string[i] == goal[count] and next_temp_string == next_goal:
+            count += 1
         else:
-            s1 = string1[i:i+2]
-            s2= string2[(-len(string1)-i):-i]
-     
-        if s1 != s2:
-            return False
-        i += 2
-    return True
-    
-print(checkIfRotated(string1,string2))
+            count = 0
+        
+    return False
+
+print(rotateString(string1,string2))
+
 
 '''
+testCases
 
-# alternate solution
+"vcuszhlbtpmksjleuchmjffufrwpiddgyynfujnqblngzoogzg"
+"fufrwpiddgyynfujnqblngzoogzgvcuszhlbtpmksjleuchmjf"
 
-
-
-
+'''
 
     
